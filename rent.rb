@@ -1,5 +1,4 @@
 class Rent
-  attr_accessor 
   attr_accessible :amount,
                   :due_date
   def increase
