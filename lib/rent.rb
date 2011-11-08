@@ -1,6 +1,9 @@
 class Rent
     attr_accessor :amount,
-                  :due_date
+                  :due_date,
+				  :apartment_id,
+				  :landlord_id,
+				  :tenant_id
                   
     def increase(p)
     end
