@@ -1,0 +1,41 @@
+GIT reference
+
+** Shared Repository Mode_The Github Collaborative Development Model we are using**
+
+To learn more about the Collaborative Development Model known as "Shared Repository Mode" please read within the following Web page: http://help.github.com/pull-requests/
+
+Simple Daily Git [http://nakedstartup.com/2010/04/simple-daily-git-workflow/]
+
+1) $ git pull # pull all changes from the remote repository
+
+...then we will each be creating branches by doing this:
+
+2) $ git checkout -b mybranch # Creates a new branch called "mybranch" and makes it the active branch
+
+Do updated work on application
+
+... then
+
+3) $ git add . # add any new files you have created
+
+4) $ git commit -m "Detailed message here" # make the commit with a nice detailed message
+
+[Note I think $ git commit am "Detailed message here" # does both steps 3) and 4) in one command]
+
+5) $ git checkout master # switch back to the master branch when the feature is done. Makes "master" the active branch
+
+6) $ git merge mybranch # Merges the commits from "mybranch" into "master"
+
+[Once you’re finished working on your branch and are ready to combine it back into the master branch, use merge.]
+
+7) $ git push # sends your changes up to the remote repository
+
+8) $ git branch -d mybranch # deletes the mybranch branch
+
+To Undo in Git http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html
+
+1) $ git revert mybranch # Revert commit "mybranch"
+
+2) $ git commit -a --amend # To use after you have fixed the broken files.
+
+Reference: http://ktown.kde.org/~zrusin/git/git-cheat-sheet-medium.png http://cheat.errtheblog.com/s/git/ (look at the bottom of this URL for clean descriptions of common tasks)
