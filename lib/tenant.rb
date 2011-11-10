@@ -1,5 +1,11 @@
 class Tenant
-  def sings
-    end
-  end
+  attr_accessor :sings
 
+  # def sings
+  #   @sings
+  # end
+
+  # def sings=( value )
+  #   @sings = value
+  # end
+end

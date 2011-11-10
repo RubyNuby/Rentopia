@@ -1,0 +1,85 @@
+Foreword: There are a lot of gopply-goop GIT instructions out there.  The purpose of this wiki document is to try and destill the core GIT commands needed to do most common GIT tasks and also integrate the corresponding Rails commands typically used in conjunction or, more specifically, in sequence with these core Git commands.  This is living document, please help improve it.   
+
+1) $ cd  /Users/yourcomputersname/rails_projects/
+
+#  Change Directory into the local folder path you want to place -- the soon to be downloaded -- remote Github repository too.  Remember: you do not need to create a separate blank folder with the same name as the Repo you are about to drop, because when you drop the Repo it will automatically clone the target folder and place it as nested folder within the folder you have CD into from terminal (cmd line).  After step 2) below you are going to want 
+
+/Users/yourcomputersname/rails_projects/Rentopia 
+not the following redundant nesting situation:
+/Users/yourcomputersname/rails_projects/rentopia/Rentopia 
+
+2) $ git clone git@github.com:RubyNuby/Rentopia.git
+ 
+# This clones the remote Repository (/Rentopia.git) that from Github account RubyNuby to your local machine for example: /Users/yourcomputername/rails_projects/Rentopia 
+
+3) $ cd Rentopia 
+
+# Change directory on your local machine into the newly downloaded Rentopia folder. 
+
+4) $ bundle install  
+
+# May be necessary to do bundle install command depending on what files have been updated.
+
+5) $ rake db:migrate
+
+# May be necessary to "rake db:migrate" if database files have been modified.
+
+6) $ git checkout -b type-the-name-of-your-branch-here 
+
+# Creates a new branch with the name you give it and makes it the active branch on your local machine.  
+
+{You then proceed to do the desired work/code associated with this target branch on your local machine. The idea here is to keep code in small chunks and commit regularly to your local git.}
+
+7) $ git add .
+
+# This adds the file contents (e.g. your updated code) to a staging area.  In Git, you have to add file contents to your staging area before you can commit them.
+
+8) $ git status and/or git diff
+
+# This allows you to see the status of the changes your about to commit to your local .git repo before you actually do the commit
+
+9) $ git commit -m "type-the-name-or-message-of-your-commit-here"" 
+
+# This commits the latest code to your local .git file and includes a clear label or message so everyone on the team knows what the commit represents, i.e. what specific changes have been made with that commit.
+
+[Note I think $ git commit am "type-the-name-of-your-commit-here" does both both steps 7) and 9) in one command, i.e. it both *adds* the updated code into a staging area and then *commits* that code to your local .git folder.
+
+10) $ git checkout master
+
+# When the feature your were working on and have committed to above is ready to be merged with the master branch, you need to first checkout the master.  This command switches you back to the master branch and makes the "master" the new active branch.
+
+11) $ git merge the-name-of-your-branch-here
+
+# Once you’re finished working on your local branch and are ready to combine it back into the master branch, use the merge cmd.
+
+12) $ git push 
+
+# sends your changes up to the remote repository master branch
+
+****************************************************************************************************************************
+****************************************************************************************************************************
+From this point on you no longer need to use "Clone" cmd and you can periodically "Pull" the latest project updates from your development team from the shared remote Github repository as follows ....
+
+13) $ git pull -r origin master
+
+# This pulls the latest code updates from the remote Github server and rebases it linearly on top of your most recent local code build.  The most recent local code build is encapsulated within your .git file on your local machine. 
+
+14) $ bundle install  
+
+# This updates the latest gems on your local machine and makes sure all dependencies in your Gemfile are available to your application.
+
+15) $ rake db:migrate
+
+# May be necessary to "rake db:migrate" if database files have been modified.
+
+16) Start the new branch checkout process again for the next feature.  Go back to Step 6) above and iterate through these steps again for each new branch (feature) until your project is complete.
+
+
+Citations/Sources:
+
+http://git-scm.com/documentation
+http://nakedstartup.com/2010/04/simple-daily-git-workflow/
+http://ktown.kde.org/~zrusin/git/git-cheat-sheet-medium.png http://cheat.errtheblog.com/s/git/ 
+(Look at the bottom of this URL for clean descriptions of common tasks)
+http://help.github.com/pull-requests/  
+(To learn more about the Collaborative Development Model known as "Shared Repository Mode")
