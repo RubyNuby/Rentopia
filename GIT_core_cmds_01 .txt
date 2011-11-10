@@ -56,8 +56,8 @@ not the following redundant nesting situation:
 
 # sends your changes up to the remote repository master branch
 
-****************************************************************************************************************************
-****************************************************************************************************************************
+*********************************************************************************************************
+*********************************************************************************************************
 From this point on you no longer need to use "Clone" cmd and you can periodically "Pull" the latest project updates from your development team from the shared remote Github repository as follows ....
 
 13) $ git pull -r origin master
