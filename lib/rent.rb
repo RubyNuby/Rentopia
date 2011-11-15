@@ -5,7 +5,7 @@ class Rent
         				  :landlord_id,
         				  :tenant_id
     
-    percentage
+    percentage = 0.05
     
     def increase(percentage)
       @amount = @amount * (1 + percentage)
@@ -18,5 +18,4 @@ class Rent
     def is_paid?()
      return nil if @amount == 0 
     end
-
 end
