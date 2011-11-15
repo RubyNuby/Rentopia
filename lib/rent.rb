@@ -18,13 +18,5 @@ class Rent
     def is_paid?()
      return nil if @amount == 0 
     end
-    
-    def amount(value)
-      @amount = value
-    end
-    
-    def due_date(date)
-      @due_date = date
-    end
-    
+
 end
