@@ -4,11 +4,11 @@ class Rent
     
     percentage = 0.05
     
-    def increase(percentage)
+    def increase()
       @amount * (1 + percentage)
     end
 
-    def decrease(percentage)
+    def decrease()
       @amount * (1 - percentage)
     end
     
@@ -16,4 +16,10 @@ class Rent
       return nil if @amount == 0 
     end
     
+  # a method that allows user to change the percentage
+  # def get_percentage_from_user()
+  #   puts "please enter percentage for increasing/decreasing the rent"
+  #   percentage = gets
+  #   return percentage
+  # end
 end
