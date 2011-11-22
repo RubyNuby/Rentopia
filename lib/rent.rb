@@ -13,7 +13,7 @@ class Rent
     end
     
     def is_paid?()
-      return nil if @amount == 0 
+      return true if @amount == 0 
     end
     
   # a method that allows user to change the percentage
