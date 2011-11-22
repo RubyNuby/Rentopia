@@ -1,3 +1,4 @@
+# require 'date'
 class Rent
     attr_accessor :amount,
                   :due_date
@@ -14,7 +15,7 @@ class Rent
     
     def is_paid?()
       if @amount == 0 
-      else puts "Please pay off your rent by " + @due_date
+      else puts "Your rent is due in " + @d + ", Please pay off your rent by " + @due_date
     end
     
   # allow user to change the percentage
@@ -22,5 +23,11 @@ class Rent
     puts "please enter percentage for increasing/decreasing the rent"
     PERCENTAGE = gets
     return PERCENTAGE
+  end
+  
+  # calculate days left before due_date
+  def date_diff()
+    start_time = Time.current
+    @d = distance_of_time_in_words(start_time, @due_date, false)
   end
 end
