@@ -14,13 +14,13 @@ class Rent
     
     def is_paid?()
       if @amount == 0 
-      else puts "Please pay your rent by " + @due_date
+      else puts "Please pay off your rent by " + @due_date
     end
     
-  # a method that allows user to change the percentage
-  # def get_percentage_from_user()
-  #   puts "please enter percentage for increasing/decreasing the rent"
-  #   PERCENTAGE = gets
-  #   return PERCENTAGE
-  # end
+  # allow user to change the percentage
+  def change_percentage()
+    puts "please enter percentage for increasing/decreasing the rent"
+    PERCENTAGE = gets
+    return PERCENTAGE
+  end
 end
