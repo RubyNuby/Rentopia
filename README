@@ -2,7 +2,7 @@
 Rentopia README
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-											GIT Instructions
+					GIT Instructions
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -85,7 +85,7 @@ From this point on you no longer need to use "Clone" cmd and you can periodicall
 ******************************************************************************************************************************************************************************************************************
 Other Helpful Git commands:
 
-$ git revert mybranch # Revert commit "mybranch"
+$ git revert mybranch # Revert commit "mybranch" may need to place "--" before branch name
 
 $ git commit -a --amend # To use after you have fixed the broken files.
 
